@@ -1346,3 +1346,24 @@ Processing by SchoolClassesController#show as HTML
   Parameters: {"id"=>"1"}
   [1m[35mSchoolClass Load (0.2ms)[0m  SELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT 1  [["id", 1]]
   Rendered school_classes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/school_classes/" for 74.72.0.210 at 2018-09-29 04:10:04 +0000
+Processing by SchoolClassesController#index as HTML
+  Rendered school_classes/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/3/edit" for 74.72.0.210 at 2018-09-29 04:10:10 +0000
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered students/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students" for 74.72.0.210 at 2018-09-29 04:10:14 +0000
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
