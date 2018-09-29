@@ -1166,3 +1166,44 @@ rubocop \
   --auto-correct
 
 . (called from block (2 levels) in <top (required)> at /home/lauralaura14/rails-form_for-lab-v-000/spec/factories/students.rb:4)
+
+
+Started GET "/students/index" for 74.72.0.210 at 2018-09-29 04:05:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 23ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=index):
+  app/controllers/students_controller.rb:8:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.5ms)
+
+
+Started GET "/students/new" for 74.72.0.210 at 2018-09-29 04:05:50 +0000
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 248ms (Views: 244.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/students" for 74.72.0.210 at 2018-09-29 04:05:53 +0000
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PwzSZnKCvAp04CXIuGV89DnnLCiUColcf9QRz3vrpgm9epSxYxoNRnBO1Xmfkm5udJd1B3CiwhUpD07jmRt8SA==", "student"=>{"first_name"=>"ada", "last_name"=>"das"}, "commit"=>"Create Student"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["first_name", "ada"], ["last_name", "das"], ["created_at", "2018-09-29 04:05:53.887673"], ["updated_at", "2018-09-29 04:05:53.887673"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.165.109:53521/students/3
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/students/3" for 74.72.0.210 at 2018-09-29 04:05:53 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered students/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.1ms)
