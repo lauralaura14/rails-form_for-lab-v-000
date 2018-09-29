@@ -1060,3 +1060,31 @@ Processing by StudentsController#show as HTML
   Parameters: {"id"=>"2"}
   [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 2]]
   Rendered students/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students/2/edit" for 74.72.0.210 at 2018-09-29 04:01:29 +0000
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered students/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/students/2" for 74.72.0.210 at 2018-09-29 04:01:35 +0000
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SZ8jLlSAYTFCc/BBhuiGHy0wtBEeFGZauzDVyorvIuhtLBj46cVezaHCE6lCQnO004KtYnchLLgRBJlqUxc4GA==", "student"=>{"first_name"=>"cat", "last_name"=>"manman\r\n"}, "commit"=>"Update Student", "id"=>"2"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "students" SET "last_name" = ?, "updated_at" = ? WHERE "students"."id" = ?[0m  [["last_name", "manman\r\n"], ["updated_at", "2018-09-29 04:01:35.458538"], ["id", 2]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Redirected to http://67.205.165.109:53521/students/2
+Completed 302 Found in 8ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/students/2" for 74.72.0.210 at 2018-09-29 04:01:35 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered students/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.2ms)
